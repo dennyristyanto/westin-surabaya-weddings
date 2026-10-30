@@ -1,0 +1,28 @@
+const menuButton=document.querySelector('.menu-toggle');
+const mobileNav=document.querySelector('#mobile-nav');
+menuButton.addEventListener('click',()=>{const expanded=menuButton.getAttribute('aria-expanded')==='true';menuButton.setAttribute('aria-expanded',String(!expanded));menuButton.setAttribute('aria-label',expanded?'Open menu':'Close menu');mobileNav.hidden=expanded;});
+mobileNav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{mobileNav.hidden=true;menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Open menu');}));
+const packages={
+ 'Buffet Wedding Package':{description:'A buffet selection from the Westin culinary team for a warm celebration with family and friends.',details:['Explore buffet selections to suit your celebration.','Shape your plans around your guest numbers and wedding vision.','Request a formal proposal with benefits, minimum guest numbers, and pricing.']},
+ 'Set Menu Wedding Package':{description:'A curated sequence of dishes from the Westin culinary team for an elegant and memorable dining experience.',details:['Explore your menu preferences with the Westin team.','Plan your table settings and dining atmosphere around your vision.','Request a formal proposal with benefits, minimum guest numbers, and pricing.']}
+};
+const packageDialog=document.querySelector('#package-dialog');let selectedPackage='';
+document.querySelectorAll('[data-package]').forEach(button=>button.addEventListener('click',()=>{selectedPackage=button.dataset.package;const data=packages[selectedPackage];document.querySelector('#package-title').textContent=selectedPackage;document.querySelector('#package-description').textContent=data.description;document.querySelector('#package-details').replaceChildren(...data.details.map(item=>{const li=document.createElement('li');li.textContent=item;return li;}));packageDialog.showModal();}));
+document.querySelector('#choose-package').addEventListener('click',()=>{document.querySelector('#package-select').value=selectedPackage;packageDialog.close();document.querySelector('#inquiry').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});setTimeout(()=>document.querySelector('[name=name]').focus({preventScroll:true}),450);});
+document.querySelectorAll('dialog').forEach(dialog=>{dialog.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});});
+const lightbox=document.querySelector('#lightbox');
+document.querySelectorAll('[data-image]').forEach(button=>button.addEventListener('click',()=>{const image=document.querySelector('#lightbox-image');image.src=button.dataset.image;image.alt=button.querySelector('img').alt;document.querySelector('#lightbox-caption').textContent=button.dataset.caption;lightbox.showModal();}));
+const gallery=document.querySelector('#gallery-track');
+function moveGallery(direction){const distance=gallery.querySelector('.gallery-item').offsetWidth+20;const end=gallery.scrollWidth-gallery.clientWidth;let left=gallery.scrollLeft+distance*direction;if(direction>0&&gallery.scrollLeft>=end-5)left=0;if(direction<0&&gallery.scrollLeft<=5)left=end;gallery.scrollTo({left,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}
+document.querySelector('#gallery-next').addEventListener('click',()=>moveGallery(1));document.querySelector('#gallery-prev').addEventListener('click',()=>moveGallery(-1));
+const dateInput=document.querySelector('[name=date]');const localToday=new Date();dateInput.min=[localToday.getFullYear(),String(localToday.getMonth()+1).padStart(2,'0'),String(localToday.getDate()).padStart(2,'0')].join('-');
+document.querySelector('#inquiry-form').addEventListener('submit',event=>{event.preventDefault();const form=event.currentTarget;if(!form.reportValidity())return;const data=new FormData(form);const selectedDate=new Date(data.get('date')+'T12:00:00');const message=['Hello Westin Surabaya Wedding Specialist,','I would like to discuss my wedding plans.','',`Name: ${data.get('name').trim()}`,`Preferred date: ${selectedDate.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})}`,`Number of guests: ${data.get('guests')}`,`Preferred package: ${data.get('package')}`,data.get('message').trim()?`Wedding vision / requirements: ${data.get('message').trim()}`:'','', 'Please share date availability and a wedding package proposal. Thank you.'].filter(Boolean).join('\n');const url='https://wa.me/6282331439094?text='+encodeURIComponent(message);window.open(url,'_blank','noopener,noreferrer');const status=document.querySelector('#form-status');status.replaceChildren(document.createTextNode('Your message is ready in WhatsApp. '));const link=document.createElement('a');link.href=url;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Click here if WhatsApp has not opened.';status.append(link);});
+
+// Keep the transparent header pinned, with a light glass surface over content.
+const header=document.querySelector('.header');
+function updateHeader(){header.classList.toggle('is-scrolled',window.scrollY>32);header.classList.toggle('menu-open',menuButton.getAttribute('aria-expanded')==='true');}
+window.addEventListener('scroll',updateHeader,{passive:true});
+menuButton.addEventListener('click',updateHeader);
+mobileNav.querySelectorAll('a').forEach(link=>link.addEventListener('click',updateHeader));
+window.addEventListener('pageshow',updateHeader);
+updateHeader();
