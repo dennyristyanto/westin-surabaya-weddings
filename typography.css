@@ -1,0 +1,61 @@
+/* Fluid type across Overview, Weddings, and Meetings & Events.
+   rem bounds preserve browser text-size preferences; viewport interpolation
+   scales gradually from small phones to large desktop screens. */
+:root{--type-body:clamp(.875rem,calc(.83rem + .19vw),1rem);--type-small:clamp(.75rem,calc(.71rem + .17vw),.875rem);--type-label:clamp(.625rem,calc(.59rem + .14vw),.75rem);--type-eyebrow:clamp(.5625rem,calc(.53rem + .14vw),.6875rem);--type-action:clamp(.8125rem,calc(.77rem + .18vw),.9375rem);--type-section:clamp(2.25rem,calc(1.77rem + 2vw),3.75rem);--type-card:clamp(1.875rem,calc(1.55rem + 1.3vw),2.75rem);--type-stat:clamp(2rem,calc(1.5rem + 2vw),3.25rem)}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font-size:var(--type-body)}
+:is(h1,h2,h3,p,a,button,label,small,span){overflow-wrap:break-word}
+.portal-intro h1{font-size:clamp(2.875rem,calc(2.2rem + 3vw),5.25rem);line-height:1.05}
+.hero h1{font-size:clamp(3.25rem,calc(2.2rem + 4.2vw),6.5rem);line-height:1.04}
+.mice-hero h1{font-size:clamp(3rem,calc(1.95rem + 4.2vw),6rem);line-height:1.07}
+h2,.venue h2,.gallery h2,.inquiry h2,.event-inquiry h2,.portal-welcome h2,.cross-story h2,.spaces h2,.vip-copy h2,.film-heading h2{font-size:var(--type-section);line-height:1.1}
+h3,.package-content h3,.journey-steps h3,.setting-card h3,.space-content h3,.planning-details h3{font-size:var(--type-card);line-height:1.14}
+.format-copy h3,.package-dialog h2{font-size:clamp(2rem,calc(1.55rem + 1.8vw),3rem);line-height:1.12}
+.choice-copy h2{font-size:clamp(2rem,calc(1.6rem + 1.8vw),3.125rem);line-height:1.06}
+.eyebrow,.hero .eyebrow,.mice-hero .eyebrow,.package-content .eyebrow,.cross-story .eyebrow,.setting-card .eyebrow,.format-copy .eyebrow,.space-content .eyebrow,.film-heading .eyebrow{font-size:var(--type-eyebrow);line-height:1.7;letter-spacing:clamp(1.3px,.16vw,2.2px)}
+.portal-intro .eyebrow{font-size:clamp(.625rem,calc(.57rem + .22vw),.8125rem);letter-spacing:clamp(1.5px,.18vw,2.6px);line-height:1.7;max-width:100%;margin:0 auto clamp(18px,2vw,27px)}
+.hero-description,.mice-hero-copy>p:not(.eyebrow),.portal-intro>p:last-child,.choice-copy>p,.experience-copy>p:not(.eyebrow),.package-content>p:not(.eyebrow),.journey-steps p,.inquiry-copy>p:not(.eyebrow),.event-inquiry .inquiry-copy>p:not(.eyebrow),.section-heading>p,.venue-content>p:not(.eyebrow),.portal-welcome p:not(.eyebrow),.cross-story p:not(.eyebrow),.setting-card p,.format-copy>p:not(.eyebrow),.space-content>p:not(.eyebrow),.vip-copy>p:not(.eyebrow):not(.venue-fineprint),.planning-details p,.package-dialog p,.package-dialog li,details p{font-size:var(--type-body);line-height:1.8}
+.desktop-nav,.mobile-nav:not([hidden]),.nav-cta,.portal-page .header .nav-cta,.mice-page .header .nav-cta{font-size:clamp(.6875rem,calc(.64rem + .2vw),.875rem)}
+.button,.text-link,.package-foot .text-link,.contact-link,.choice-button,.setting-link,.format-tabs button,.space-card .text-link,.vip-copy .text-link,.mice-hero-actions .mice-action{font-size:var(--type-action);line-height:1.5}
+label,.event-form label,.layout-picker{font-size:var(--type-small);line-height:1.6}
+input,select,textarea,.layout-picker select{font-size:clamp(1rem,calc(.96rem + .16vw),1.125rem);line-height:1.5}
+.form-note,.form-status,.inquiry-note,.package-foot>span,.package-note,.gallery-note,.venue-content .capacity-note,.venue-fineprint,.vip-copy .venue-fineprint,.specification-link,.package-dialog .dialog-note{font-size:var(--type-small);line-height:1.75}
+.hero-bottom,.photo-credit,.vertical-note,.choice-eyebrow,.portal-caption,.wedding-page .photo-tag,.photo-tag,.venue-stats small,.mice-hero-bottom,.mice-hero-bottom a,.mice-stat-strip small,.space-capacity span,.vip-tags span,.footer-bottom,.events-footer nav,footer>a:not(.brand){font-size:var(--type-label);line-height:1.65}
+.brand-sub{font-size:clamp(.4375rem,calc(.41rem + .1vw),.5625rem)}
+.intro-strip{font-size:clamp(1rem,calc(.8rem + .8vw),1.625rem);line-height:1.4}
+.venue-stats span,.mice-stat-strip strong,.space-capacity strong{font-size:var(--type-stat)}
+.mice-stat-strip strong span{font-size:clamp(1rem,calc(.8rem + .8vw),1.5rem)}
+.journey-steps article>span{font-size:clamp(1.5rem,calc(1.2rem + 1.2vw),2.25rem)}
+.gallery-item span,.hero-peek>span,.lightbox p{font-size:clamp(1.375rem,calc(1.1rem + 1.1vw),2rem)}
+footer>p,.events-footer>p{font-size:clamp(1.375rem,calc(1.1rem + 1.1vw),2rem)}
+summary{font-size:var(--type-body);line-height:1.65}
+summary>span,.dialog-close{font-size:clamp(1.25rem,calc(1.1rem + .6vw),1.75rem)}
+.form-pair>*{min-width:0}.section-heading>*,.cross-story>*,.inquiry>*{min-width:0}
+.choice-copy>p{line-height:1.55}.portal-caption{gap:15px;flex-wrap:wrap}.format-tabs button{flex-shrink:0}
+.mice-hero-actions{flex-wrap:wrap}.mice-hero-copy{max-width:1600px}
+@media(max-width:760px){.hero-copy{padding-bottom:75px}.choice-copy{left:22px;right:22px}.choice-eyebrow{left:22px;right:22px}.mice-hero{min-height:780px}.mice-hero h1{max-width:100%}.venue-stats{flex-wrap:wrap}.package-foot{flex-wrap:wrap}.package-foot>span{max-width:none}.gallery-controls{flex-shrink:0}}
+@media(max-width:480px){.choice-copy h2{font-size:clamp(2.125rem,9vw,2.625rem)}.story-choice{height:370px}.portal-hero{padding-top:125px}.mice-stat-strip{gap:10px}.mice-stat-strip strong{font-size:clamp(1.625rem,6.5vw,2rem)}.mice-stat-strip small{letter-spacing:.7px}.mice-hero h1{font-size:clamp(2.75rem,10vw,3.25rem)}.hero h1{font-size:clamp(2.875rem,11vw,3.5rem)}.header .nav-cta{padding-left:14px;padding-right:14px;margin-right:15px}.choice-eyebrow{font-size:var(--type-eyebrow)}}
+.package-highlights,.format-copy ul{font-size:var(--type-body);line-height:1.8}
+.hero-peek b,.setting-link,.events-footer nav,.gallery-item b{font-size:var(--type-small)}
+@media(max-width:760px){.gallery .section-heading{flex-wrap:wrap;gap:20px}.mice-stat-strip small{max-width:none}}
+
+/* Retain the approved dark footer composition on every page. */
+footer.events-footer{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:38px;background:#555;color:#fff;padding:52px 7% 25px}
+footer.events-footer>.brand{justify-self:start;order:0}
+footer.events-footer .brand-logo{width:clamp(124px,10.4vw,170px)}
+footer.events-footer>p{order:0;width:auto;margin:0;text-align:center;font-size:clamp(1.25rem,1.8vw,1.75rem);line-height:1.35;color:#e8e8e8}
+footer.events-footer>nav{order:0;width:auto;display:flex;justify-content:flex-end;gap:clamp(15px,1.6vw,28px);flex-wrap:wrap;margin:0;font-size:clamp(.625rem,.75vw,.8125rem);line-height:1.6}
+footer.events-footer>.footer-bottom{order:0;grid-column:1/-1;display:flex;justify-content:space-between;gap:20px;width:100%;margin-top:8px;border-top:1px solid #ffffff30;padding-top:19px;font-size:clamp(.5625rem,.62vw,.6875rem);line-height:1.7;color:#e3e3e3}
+footer.events-footer>.footer-bottom>span:last-child{text-align:right}
+@media(max-width:1000px) and (min-width:761px){footer.events-footer{gap:24px;padding-left:6%;padding-right:6%}footer.events-footer>nav{max-width:230px}footer.events-footer>p{font-size:1.25rem}}
+@media(max-width:760px){footer.events-footer{grid-template-columns:1fr;gap:25px;padding:40px 7% 25px}footer.events-footer>p{text-align:left;font-size:clamp(1.375rem,4vw,1.625rem)}footer.events-footer>nav{justify-content:flex-start;gap:20px;font-size:.75rem}footer.events-footer>.footer-bottom{display:grid;gap:10px;margin-top:0;font-size:.625rem}footer.events-footer>.footer-bottom>span:last-child{text-align:left}}
+
+/* Approved footer reference: preserve its proportions independently of page typography. */
+@media(min-width:1101px){
+ footer.events-footer{padding:3.9vw 7% 1.6vw;column-gap:2.4vw;row-gap:2.4vw}
+ footer.events-footer .brand-logo{width:8.3vw;max-width:none}
+ footer.events-footer .brand-sub{font-size:.44vw;letter-spacing:.235vw;margin-top:.39vw;margin-left:.235vw}
+ footer.events-footer>p{font-size:1.34vw;line-height:1.35}
+ footer.events-footer>nav{font-size:.61vw;gap:1.6vw;max-width:none;flex-wrap:nowrap}
+ footer.events-footer>.footer-bottom{margin-top:0;padding-top:1.1vw;font-size:.47vw;line-height:1.7;letter-spacing:.02vw}
+}
