@@ -40,3 +40,69 @@
 .portal-choices .story-choice:first-child>img{object-position:50% 0%;transform:translateX(var(--portrait-shift)) scale(var(--portrait-scale))}
 .portal-choices .story-choice:first-child:hover>img{transform:translateX(var(--portrait-shift)) scale(1.33)}
 @media(prefers-reduced-motion:reduce){.portal-choices .story-choice:first-child:hover>img{transform:translateX(var(--portrait-shift)) scale(var(--portrait-scale))}}
+
+/* Promotions entry point; the approved footer remains unchanged. */
+.promotion-invite{background:#22201e;color:#f6f3ee;padding:30px 7%}
+.promotion-invite>a{display:flex;align-items:center;justify-content:space-between;gap:25px;max-width:1400px;margin:auto}
+.promotion-date{font-size:10px;letter-spacing:1.5px;color:#d8c6a4;white-space:nowrap}
+.promotion-title{font:400 clamp(23px,2.3vw,35px)/1.25 var(--serif)}
+.promotion-title em{font-weight:400;color:#d8c6a4}
+.promotion-discover{font-size:12px;white-space:nowrap}.promotion-discover>span{margin-left:14px;font-size:20px}
+.promotion-invite a:hover .promotion-discover{color:#d8c6a4}
+@media(max-width:1000px){.desktop-nav,.wedding-page .header .desktop-nav{display:none}.header .menu-toggle{display:flex}.header .nav-cta{margin-left:auto;margin-right:25px}.mobile-nav:not([hidden]){top:100px}.promotion-invite>a{flex-wrap:wrap;gap:14px}.promotion-title{flex-basis:100%;order:2}.promotion-discover{order:3}}
+@media(max-width:760px){.mobile-nav:not([hidden]){top:88px}.promotion-invite{padding:27px 7%}.promotion-date{font-size:9px}}
+
+/* A generous poster-led invitation on Home. */
+.promotion-invite{padding:clamp(35px,4.5vw,70px) 7%;background:#26231f}
+.promotion-invite>a{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(30px,5vw,75px);max-width:1400px;align-items:center}
+.promotion-poster{display:block;width:100%;height:auto;object-fit:contain;box-shadow:0 15px 45px #0003;border-radius:6px}
+.promotion-copy{display:flex;flex-direction:column;align-items:flex-start;gap:22px;min-width:0}
+.promotion-date{font-size:clamp(9px,.85vw,12px);line-height:1.7;white-space:normal}
+.promotion-title{font-size:clamp(38px,4.5vw,66px);line-height:1.04;flex-basis:auto;order:0}
+.promotion-title em{display:block;font-size:.65em;line-height:1.3;margin-top:13px}
+.promotion-summary{font-size:clamp(13px,1.1vw,16px);line-height:1.8;color:#e0d8cb}
+.promotion-discover{display:inline-flex;align-items:center;justify-content:center;font-size:clamp(12px,1vw,15px);padding:15px 24px;min-height:49px;border:1px solid #f7ebd23b;border-radius:50px;background:#e5d6bd26;color:#f8f3e9;box-shadow:0 8px 24px #0003,0 2px 5px #0002,inset 0 1px 2px #fff4;transition:transform .2s,box-shadow .2s;order:0}
+.promotion-invite a:hover .promotion-discover{color:#fff;transform:translateY(-2px);box-shadow:0 11px 28px #0004,inset 0 1px 2px #fff5}
+@media(max-width:760px){.promotion-invite>a{grid-template-columns:1fr;gap:30px}.promotion-copy{gap:18px}.promotion-title{font-size:43px}.promotion-title em{font-size:29px}.promotion-discover{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.promotion-discover{transition:none}.promotion-invite a:hover .promotion-discover{transform:none}}
+
+/* Tablet navigation, current-page emphasis and a compact promotion banner. */
+.header :is(.desktop-nav,.mobile-nav) a{display:inline-block;transition:transform .2s,text-shadow .2s}
+.header :is(.desktop-nav,.mobile-nav) a[aria-current="page"]{transform:scale(1.09);font-weight:600;text-shadow:0 3px 9px #0003}
+.header :is(.desktop-nav,.mobile-nav) a[aria-current="page"]::before{opacity:1;transform:translateY(0)}
+@media(max-width:1000px){
+ .header .menu-toggle{display:flex;flex-direction:column;gap:5px;align-items:center;justify-content:center;background:none;border:0;width:44px;min-width:44px;height:44px;padding:0;color:inherit}
+ .header .menu-toggle span{display:block;height:1px;width:23px;background:currentColor}
+ .header .mobile-nav:not([hidden]){display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:24px;padding:28px 7%;background:rgba(250,248,244,.97);color:#34312c;border-bottom:1px solid #ddd;box-shadow:0 15px 25px #0002;backdrop-filter:blur(20px);font-size:15px}
+ .header .mobile-nav a{align-self:flex-start}
+ .header .mobile-nav[hidden]{display:none}
+}
+.format-controls{display:flex;align-items:center;gap:20px;padding-bottom:23px;border-bottom:1px solid #dedede}
+.format-controls .format-tabs{flex:1;min-width:0;border:0;padding-bottom:0}
+.format-controls .capacity-chart-action{flex:none;margin:0}
+.promotion-invite{padding:26px 6%;background:transparent}
+.promotion-invite>a{max-width:1180px;padding:24px;grid-template-columns:minmax(220px,.85fr) minmax(0,1.3fr);gap:32px;background:#26231f;border-radius:14px}
+.promotion-poster{transition:transform .35s,box-shadow .35s}
+.promotion-copy{gap:12px}
+.promotion-title{font-size:clamp(30px,3.1vw,43px)}
+.promotion-title em{font-size:.65em;margin-top:7px}
+.promotion-summary{font-size:13px;line-height:1.6}
+.promotion-discover{font-size:12px;min-height:44px;padding:11px 21px;transform-origin:center}
+.promotion-invite a:is(:hover,:focus-visible) .promotion-poster{transform:scale(1.035);box-shadow:0 18px 38px #0005}
+.promotion-invite a:is(:hover,:focus-visible) .promotion-discover{transform:translateY(-2px) scale(1.06)}
+@media(max-width:760px){.format-controls{flex-wrap:wrap;gap:16px}.format-controls .format-tabs{flex-basis:100%}.format-controls .capacity-chart-action{margin-left:auto}.promotion-invite>a{grid-template-columns:1fr;gap:20px;padding:20px}.promotion-copy{gap:12px}.promotion-title{font-size:35px}.promotion-title em{font-size:24px}}
+@media(prefers-reduced-motion:reduce){.header :is(.desktop-nav,.mobile-nav) a,.promotion-poster{transition:none}.promotion-invite a:is(:hover,:focus-visible) :is(.promotion-poster,.promotion-discover){transform:none}}
+
+/* Selected navigation expands while its neighbours make room. */
+.header :is(.desktop-nav,.mobile-nav).nav-motion a{transform:translateX(var(--nav-offset,0px)) scale(var(--nav-scale,1));transition:transform .32s cubic-bezier(.22,.8,.3,1),text-shadow .32s;font-weight:400;text-shadow:none}
+.header :is(.desktop-nav,.mobile-nav).nav-motion a::before{opacity:0}
+.header :is(.desktop-nav,.mobile-nav).nav-motion a.nav-selected{font-weight:600;text-shadow:0 3px 9px #0003}
+.header :is(.desktop-nav,.mobile-nav).nav-motion a.nav-selected::before{opacity:1;transform:translateY(0)}
+/* One continuous row of matching event buttons, with the chart opening a dialog. */
+.format-controls{justify-content:flex-start;gap:12px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;padding-top:5px}
+.format-controls .format-tabs{flex:0 0 auto;overflow:visible;gap:12px}
+.format-controls .capacity-chart-action{margin:0;flex:0 0 auto}
+.format-controls .capacity-chart-button{display:inline-flex;align-items:center;justify-content:center;background:transparent;border:1px solid #e1e1e1;color:#707070;border-radius:40px;padding:11px 25px;min-height:0;font-size:var(--type-action);font-family:inherit;font-weight:400;line-height:1.5;white-space:nowrap;box-shadow:none;backdrop-filter:none;transition:background .2s,box-shadow .2s;transform:none}
+.format-controls .capacity-chart-button:is(:hover,:focus-visible){background:transparent;box-shadow:0 5px 15px #0001;transform:none}
+@media(max-width:760px){.format-controls .format-tabs{flex-basis:auto}.format-controls .capacity-chart-action{margin-left:0}}
+@media(prefers-reduced-motion:reduce){.header :is(.desktop-nav,.mobile-nav).nav-motion a{transition:none}}

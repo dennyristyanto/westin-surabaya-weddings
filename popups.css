@@ -1,0 +1,32 @@
+/* Frosted NYE welcome and the supplied capacity chart viewer. */
+html.site-popup-open{overflow:hidden}
+.nye-promotion-popup,.capacity-chart-dialog{padding:0;border:1px solid #ffffffb3;border-radius:22px;color:#36312a;box-shadow:0 24px 90px #0005;max-height:calc(100svh - 32px);max-width:calc(100vw - 32px)}
+.nye-promotion-popup::backdrop,.capacity-chart-dialog::backdrop{background:rgba(30,28,25,.38);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
+.nye-promotion-popup{width:min(880px,calc(100vw - 40px));background:rgba(250,245,235,.67);backdrop-filter:blur(28px) saturate(1.25);-webkit-backdrop-filter:blur(28px) saturate(1.25);overflow:auto}
+.popup-close{display:flex;align-items:center;justify-content:center;position:absolute;right:16px;top:16px;width:40px;height:40px;border:1px solid #ffffff9c;border-radius:50%;background:#fffef1d9;color:#514637;box-shadow:0 5px 15px #0002;cursor:pointer;z-index:2;padding:10px}
+.popup-close svg{display:block;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round}
+.nye-popup-poster{width:100%;height:auto;display:block;object-fit:contain}
+.nye-popup-copy{display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center;padding:30px 35px}
+.popup-kicker{font:500 10px/1.7 var(--sans);letter-spacing:1.4px;color:#75664f;margin:0 0 12px}
+.nye-popup-copy h2{font:400 clamp(30px,3.5vw,43px)/1.05 var(--serif);margin:0 0 15px;letter-spacing:-.5px}
+.nye-popup-copy h2 em{display:block;color:#86755f;font-weight:400;font-size:.7em;line-height:1.4;margin-top:5px}
+.nye-popup-copy>div>p:not(.popup-kicker){font-size:13px;line-height:1.75;margin:0;color:#625a4e}
+.nye-popup-actions{display:flex;flex-direction:column;align-items:center;gap:14px}
+.nye-popup-actions>a,.capacity-chart-button{display:inline-flex;align-items:center;justify-content:center;min-height:47px;padding:14px 23px;border:1px solid #c4b29266;border-radius:50px;background:rgba(228,215,192,.65);color:#514637;box-shadow:0 7px 21px #55442b26,0 2px 5px #55442b16,inset 0 1px 2px #fffd;font-size:13px;font-weight:500;line-height:1.5;text-align:center;transition:box-shadow .2s,transform .2s}
+.nye-popup-actions>a:hover,.capacity-chart-button:hover{transform:translateY(-2px);box-shadow:0 11px 25px #55442b35,inset 0 1px 2px #fff}
+.nye-popup-actions>button{border:0;background:transparent;font-size:12px;color:#756956;padding:7px 10px;border-radius:30px}
+.capacity-chart-action{margin-top:22px}
+.capacity-chart-dialog{width:min(1120px,calc(100vw - 40px));height:min(88svh,1000px);background:rgba(250,249,246,.97);overflow:hidden}
+.capacity-chart-dialog[open]{display:flex;flex-direction:column}
+.chart-toolbar{display:flex;align-items:center;justify-content:space-between;padding:20px 25px;border-bottom:1px solid #e4ded4;flex-shrink:0}
+.chart-toolbar>div>p{font-size:9px;letter-spacing:1.5px;color:#847966;margin:0 0 5px}
+.chart-toolbar h2{font:400 32px/1.1 var(--serif);margin:0}
+.chart-toolbar .popup-close{position:static;flex-shrink:0;margin-left:15px}
+.chart-controls{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:12px 25px;flex-shrink:0;border-bottom:1px solid #e4ded4}
+.chart-controls>a{font-size:12px;color:#6a5c48;border-radius:30px;padding:9px 14px;background:#e9e1d4}
+.chart-zoom-controls{display:flex;align-items:center;gap:9px}.chart-zoom-controls>button{border:1px solid #ded4c3;background:#fff9f0;border-radius:8px;min-width:34px;height:34px;padding:5px 10px;font-size:14px;color:#5c5141}.chart-zoom-controls>button:disabled{opacity:.4;cursor:default}.chart-zoom-controls>output{font-size:12px;width:39px;text-align:center}
+.chart-scroll{overflow:auto;overscroll-behavior:contain;padding:20px;background:#e6e2dc;flex:1;min-height:0}
+.chart-pages{min-width:100%;width:100%}.chart-pages>img{display:block;width:100%;height:auto;background:#fff;object-fit:contain;box-shadow:0 2px 12px #0001}.chart-pages>img+img{margin-top:20px}
+@media(max-width:760px){.nye-popup-copy{grid-template-columns:1fr;gap:22px;padding:25px}.nye-popup-actions{align-items:stretch;gap:8px}.nye-popup-copy h2{font-size:35px}.nye-popup-copy>div>p:not(.popup-kicker){font-size:13px}.popup-close{width:35px;height:35px;top:10px;right:10px;padding:8px}.nye-promotion-popup{width:calc(100vw - 28px);max-width:calc(100vw - 28px);border-radius:16px;max-height:calc(100svh - 28px)}.capacity-chart-dialog{width:calc(100vw - 20px);max-width:calc(100vw - 20px);height:92svh;border-radius:16px}.chart-toolbar{padding:17px}.chart-toolbar h2{font-size:28px}.chart-controls{padding:10px 14px;gap:8px}.chart-scroll{padding:10px}.chart-zoom-controls{gap:5px}.chart-controls>a{font-size:11px;padding:9px 11px}.chart-zoom-controls>button{min-width:30px;padding:5px 8px}}
+@media(prefers-reduced-transparency:reduce){.nye-promotion-popup{background:#f6f0e6;backdrop-filter:none;-webkit-backdrop-filter:none}}
+@media(prefers-reduced-motion:reduce){.nye-popup-actions>a,.capacity-chart-button{transition:none}.nye-popup-actions>a:hover,.capacity-chart-button:hover{transform:none}}
