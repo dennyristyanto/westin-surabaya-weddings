@@ -106,3 +106,17 @@
 .format-controls .capacity-chart-button:is(:hover,:focus-visible){background:transparent;box-shadow:0 5px 15px #0001;transform:none}
 @media(max-width:760px){.format-controls .format-tabs{flex-basis:auto}.format-controls .capacity-chart-action{margin-left:0}}
 @media(prefers-reduced-motion:reduce){.header :is(.desktop-nav,.mobile-nav).nav-motion a{transition:none}}
+
+/* Keep the full page navigation visible on narrow screens in a centered horizontal rail. */
+@media(max-width:1000px){
+ .header{justify-content:center}
+ .header .brand{position:absolute;left:5.2%;top:50%;transform:translateY(-50%)}
+ .header .desktop-nav{display:flex;align-items:center;justify-content:center;max-width:calc(100% - 170px);overflow-x:auto;scrollbar-width:none;white-space:nowrap;gap:22px}
+ .header .desktop-nav::-webkit-scrollbar{display:none}
+ .header .menu-toggle,.header .mobile-nav{display:none!important}
+}
+@media(max-width:760px){
+ .header{height:78px;padding:0 4%}
+ .header .brand{left:4%;transform:translateY(-50%) scale(.82);transform-origin:left center}
+ .header .desktop-nav{max-width:calc(100% - 125px);gap:17px;font-size:10px}
+}

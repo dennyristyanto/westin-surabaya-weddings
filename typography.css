@@ -59,3 +59,20 @@ footer.events-footer>.footer-bottom>span:last-child{text-align:right}
  footer.events-footer>nav{font-size:.61vw;gap:1.6vw;max-width:none;flex-wrap:nowrap}
  footer.events-footer>.footer-bottom{margin-top:0;padding-top:1.1vw;font-size:.47vw;line-height:1.7;letter-spacing:.02vw}
 }
+
+/* Narrow screens keep the page choices in a centered, horizontally scrollable navigation rail. */
+@media(max-width:1000px){
+ .header{justify-content:center}
+ .header .brand{position:absolute;left:5.2%;top:50%;transform:translateY(-50%)}
+ .header .desktop-nav{display:flex!important;align-items:center;justify-content:center;max-width:calc(100% - 170px);overflow-x:auto;scrollbar-width:none;white-space:nowrap;gap:22px}
+ .header .desktop-nav::-webkit-scrollbar{display:none}
+ .header .menu-toggle,.header .mobile-nav{display:none!important}
+}
+@media(max-width:760px){
+ .header{height:78px;padding:0 4%}
+ .header .brand{left:4%;transform:translateY(-50%) scale(.82);transform-origin:left center}
+ .header .desktop-nav{max-width:calc(100% - 125px);gap:17px;font-size:10px}
+}
+@media(max-width:1000px){.header .desktop-nav{margin-left:140px}}
+@media(max-width:760px){.header .desktop-nav{margin-left:110px}}
+@media(max-width:1000px){.header .desktop-nav{padding-left:15px}}
