@@ -91,3 +91,26 @@ footer.events-footer>.footer-bottom>span:last-child{text-align:right}
 }
 @media(max-width:760px){.header .desktop-nav{margin-left:125px!important;width:calc(100% - 125px);gap:clamp(8px,2vw,16px)}}
 @media(max-width:1000px){.header .desktop-nav a::after{display:none!important}}
+
+/* Keep every navigation item in the same slot across all pages. */
+@media(max-width:760px){
+ .header .desktop-nav{display:grid!important;grid-template-columns:58px 72px 125px 78px;gap:10px;align-items:center;justify-content:center;overflow:visible;width:calc(100% - 125px);margin-left:125px!important}
+ .header .desktop-nav a{display:block;width:100%;text-align:center;white-space:nowrap}
+ .header .desktop-nav.nav-motion a.nav-selected{transform:scale(1.08)!important;transform-origin:center center}
+}
+@media(max-width:430px){
+ .header .desktop-nav{grid-template-columns:52px 66px 112px 70px;gap:6px;width:calc(100% - 115px);margin-left:115px!important;font-size:clamp(8px,2.3vw,10px)}
+}
+
+/* Tighter, natural spacing for the compact navigation rail. */
+@media(max-width:760px){
+ .header .desktop-nav{display:flex!important;flex:1 1 auto;grid-template-columns:none;justify-content:center;align-items:center;gap:clamp(7px,1.8vw,12px);width:auto;max-width:none;margin-left:125px!important;padding:0;overflow-x:auto;overflow-y:hidden}
+ .header .desktop-nav a{display:block;width:auto;flex:0 0 auto;padding:0 1px;text-align:center;white-space:nowrap;font-size:clamp(8px,1.8vw,10px)}
+ .header .desktop-nav.nav-motion a.nav-selected{transform:scale(1.07)!important;transform-origin:center center}
+}
+@media(max-width:430px){
+ .header .desktop-nav{margin-left:112px!important;gap:clamp(5px,1.5vw,8px)}
+ .header .desktop-nav a{font-size:clamp(7px,2vw,8.5px)}
+}
+@media(max-width:760px){.wedding-page .header .desktop-nav{gap:clamp(7px,1.8vw,12px)!important}}
+@media(max-width:430px){.wedding-page .header .desktop-nav{gap:clamp(5px,1.5vw,8px)!important}}
