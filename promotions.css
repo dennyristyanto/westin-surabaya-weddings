@@ -85,3 +85,6 @@
 /* Keep the ticket unit beside its price at every screen width. */
 .nye-ticket-copy .nye-price{font-size:clamp(30px,3.5vw,52px);white-space:nowrap}
 .nye-ticket-copy .nye-price small{display:inline-block;vertical-align:baseline;margin:0 0 0 8px;font-size:11px;white-space:nowrap}
+
+/* The celebration intro ends cleanly without the decorative rule. */
+.promotions-page #celebration .nye-rule{display:none!important}

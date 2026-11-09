@@ -76,3 +76,7 @@ footer.events-footer>.footer-bottom>span:last-child{text-align:right}
 @media(max-width:1000px){.header .desktop-nav{margin-left:140px}}
 @media(max-width:760px){.header .desktop-nav{margin-left:110px}}
 @media(max-width:1000px){.header .desktop-nav{padding-left:15px}}
+
+/* Keep the compact navigation centered and stable on narrow screens. */
+@media(max-width:1000px){.header .desktop-nav{margin-left:0!important;padding-left:0!important;width:calc(100% - 155px);max-width:none;gap:clamp(10px,2vw,22px);font-size:clamp(9px,1.3vw,12px);justify-content:center}.header .desktop-nav.nav-motion a{transform:scale(var(--nav-scale,1))!important}}
+@media(max-width:760px){.header .desktop-nav{width:calc(100% - 112px);gap:clamp(8px,2vw,16px);font-size:clamp(8px,1.9vw,11px)}}
