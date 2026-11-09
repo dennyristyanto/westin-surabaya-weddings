@@ -80,3 +80,14 @@ footer.events-footer>.footer-bottom>span:last-child{text-align:right}
 /* Keep the compact navigation centered and stable on narrow screens. */
 @media(max-width:1000px){.header .desktop-nav{margin-left:0!important;padding-left:0!important;width:calc(100% - 155px);max-width:none;gap:clamp(10px,2vw,22px);font-size:clamp(9px,1.3vw,12px);justify-content:center}.header .desktop-nav.nav-motion a{transform:scale(var(--nav-scale,1))!important}}
 @media(max-width:760px){.header .desktop-nav{width:calc(100% - 112px);gap:clamp(8px,2vw,16px);font-size:clamp(8px,1.9vw,11px)}}
+
+/* Compact navigation sits in the space beside the logo and uses type emphasis only. */
+@media(max-width:1000px){
+ .header .desktop-nav{margin-left:145px!important;width:calc(100% - 145px);max-width:none!important;justify-content:center;overflow-x:auto;overflow-y:hidden}
+ .header .desktop-nav a::before{display:none!important;box-shadow:none!important}
+ .header .desktop-nav a:hover::before,.header .desktop-nav a:focus-visible::before{display:none!important;opacity:0!important}
+ .header .desktop-nav.nav-motion a{transform:scale(1)!important;text-shadow:none!important}
+ .header .desktop-nav.nav-motion a.nav-selected{transform:scale(1.08)!important;font-weight:700;text-shadow:none!important}
+}
+@media(max-width:760px){.header .desktop-nav{margin-left:125px!important;width:calc(100% - 125px);gap:clamp(8px,2vw,16px)}}
+@media(max-width:1000px){.header .desktop-nav a::after{display:none!important}}
